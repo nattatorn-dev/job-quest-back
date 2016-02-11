@@ -23,7 +23,7 @@ require('./routes/trip')(express, app);
 
 var server = app.listen(3009, function(){
   var host = "localhost";
-  var port = 3009;
+  var port = 8080;
 
   console.log('TBA app listening at http://%s:%s', host, port);
 });

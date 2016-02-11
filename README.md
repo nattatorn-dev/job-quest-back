@@ -15,7 +15,7 @@ TakeMeTour's Job Quest - Backend Task
 To install dependencies
 
 ```ruby
-node app
+npm start
 ```
 
-Go to http://localhost:3009/
+Go to http://localhost:8080/
