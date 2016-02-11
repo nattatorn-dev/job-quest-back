@@ -12,5 +12,8 @@
     "body-parser": "^1.14.2",
     "express": "^4.13.4",
     "mongoose": "^4.4.0"
+  },
+  "devDependencies": {
+    "mongoose-validators": "^0.1.0"
   }
 }

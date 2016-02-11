@@ -1,4 +1,3 @@
-// This function assumes that the request body matches the model
 exports.populate = function populateModel(model, obj) {
   for (var prop in obj) {
     model[prop] = obj[prop];
@@ -29,8 +28,8 @@ exports.findOne = function findOne(model, searchCriteria, populate) {
   });
 };
 
-exports.find = function find(model, populate) {
-  var query = model.find()
+exports.find = function find(model, select, populate) {
+  var query = model.find({}, select)
     .populate(populate);
   return new Promise(function(resolve, reject) {
     query.exec(function(err, docs) {

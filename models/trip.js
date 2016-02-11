@@ -1,8 +1,10 @@
-var mongoose = require('mongoose');
+var mongoose = require('mongoose'),
+    validators = require('mongoose-validators');
+
 
 var tripSchema = mongoose.Schema({
     name             : String,
-    price            : Number,
+    price            : {type: Number, validate: validators.isNumeric()},
     description      : String
 });
 

@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
-// var Trip = require('../models/trip');
 var Trip = mongoose.model('Trip');
 var Helper = require('../helpers/modelHelpers');
+var Viewmodel = require('../constants/viewmodel');
 
 exports.add = function(req, res) {
   if (req.body) {
@@ -43,7 +43,7 @@ exports.get = function(req, res) {
 };
 
 exports.getAll = function(req, res) {
-  Helper.find(Trip, 'trips')
+  Helper.find(Trip, Viewmodel.listTripName, 'trips')
     .then(function(results) {
       if (results) {
         res.send(results);
@@ -63,7 +63,7 @@ exports.update = function(req, res) {
         '_id': req.params.id
       },'trips')
       .then(function(data) {
-        data.name = req.body.name;
+        data = req.body;
         return data ? Helper.save(data) : {error: "An error has occured while attempting to retrieve your record."};
       })
       .then(function(data) {
