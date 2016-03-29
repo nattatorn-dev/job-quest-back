@@ -19,3 +19,6 @@ npm start
 ```
 
 Go to http://localhost:8080/
+
+[ ] test mocha and chai
+[ ] express validation
